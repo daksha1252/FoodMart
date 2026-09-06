@@ -1,0 +1,182 @@
+@use "./variables" as *;
+
+.app-promotion {
+  width: 100%;
+  padding: 9% 30px;
+
+  &__container {
+    position: relative;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    // gap: 3em;
+    padding: 80px 7% 80px 36%;
+    background-color: #fff8e9;
+    border-radius: 28px;
+  }
+
+  &__image {
+    position: absolute;
+    left: 8%;
+    // bottom: -45px;
+    z-index: 2;
+    width: 370px;
+    padding-right: 2%;
+    // right: 10%;
+    margin-top: 10px;
+
+    img {
+      display: block;
+      width: 100%;
+      //   height: auto;
+    }
+  }
+
+  &__content {
+    width: 100%;
+    max-width: 900px;
+  }
+
+  &__title {
+    margin: 0 0 48px;
+
+    font-family: $font-heading;
+    font-size: 32px;
+    font-weight: $font-bold;
+    line-height: 1.2;
+    color: $color-dark;
+  }
+
+  &__description {
+    margin: 0 0 24px;
+
+    font-family: $font-primary;
+    font-size: $font-size-base;
+    font-weight: $font-regular;
+    line-height: 2;
+    letter-spacing: 0.2px;
+    color: $color-muted;
+  }
+
+  &__stores {
+    display: flex;
+    align-items: center;
+    gap: $space-sm;
+  }
+
+  &__store {
+    display: block;
+
+    img {
+      display: block;
+      width: 184px;
+      height: 62px;
+    }
+  }
+
+  @media (min-width: $breakpoint-lg) and (max-width: $breakpoint-xl - 1) {
+    &__container {
+      padding-left: 30%;
+      padding-right: 5%;
+    }
+
+    &__image {
+      left: 5%;
+      width: 250px;
+    }
+
+    &__content {
+      max-width: 700px;
+    }
+
+    &__title {
+      font-size: 32px;
+    }
+  }
+
+  @media (max-width: $breakpoint-lg - 1) {
+    &__container {
+      padding-left: 40%;
+    }
+
+    &__image {
+      left: 4%;
+      width: 260px;
+      //   height: 30px;
+    }
+
+    &__title {
+      font-size: 36px;
+    }
+  }
+
+  @media (max-width: $breakpoint-md - 1) {
+    &__container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 50px 24px;
+    }
+
+    &__image {
+      position: relative;
+      left: auto;
+      bottom: auto;
+      width: 240px;
+      margin: 0 0 60px;
+      padding: 0;
+    }
+
+    &__content {
+      width: 100%;
+      max-width: 600px;
+      text-align: center;
+    }
+
+    &__title {
+      margin-bottom: $space-lg;
+      font-size: 32px;
+    }
+
+    &__description {
+      margin-bottom: $space-lg;
+    }
+
+    &__stores {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  }
+
+  @media (max-width: $breakpoint-sm - 1) {
+    padding: $space-lg 15px;
+
+    &__container {
+      padding: 40px 16px;
+    }
+
+    &__image {
+      width: 180px;
+      margin-bottom: 48px;
+    }
+
+    &__title {
+      font-size: 28px;
+    }
+
+    &__description {
+      font-size: $font-size-sm;
+    }
+
+    &__stores {
+      gap: $space-sm;
+    }
+
+    &__store {
+      img {
+        width: 150px;
+        height: auto;
+      }
+    }
+  }
+}

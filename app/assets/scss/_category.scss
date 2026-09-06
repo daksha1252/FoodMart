@@ -1,0 +1,159 @@
+@use "./variables" as *;
+
+.category {
+  width: 100%;
+  padding: $space-xl 15px;
+
+  // --------------------------------
+  // Carousel viewport
+  // --------------------------------
+
+  &__viewport {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  // --------------------------------
+  // Moving track
+  // --------------------------------
+
+  &__track {
+    display: flex;
+    align-items: stretch;
+
+    gap: 32px;
+
+    width: max-content;
+
+    transition: transform 0.4s ease;
+  }
+
+  // --------------------------------
+  // Category card
+  // --------------------------------
+
+  &-card {
+    flex: 0 0 220px;
+
+    width: 220px;
+    height: 215px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: $space-lg;
+
+    background-color: $color-white;
+    border: 1px solid $color-border;
+    border-radius: $radius-lg;
+
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.04);
+
+    cursor: pointer;
+
+    transition:
+      transform 0.5s ease,
+      border-color 0.3s ease,
+      box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-15px);
+      border-color: $color-border;
+      box-shadow: 10px 15px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    // --------------------------------
+    // Card image
+    // --------------------------------
+
+    &__image {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 48px;
+      height: 48px;
+
+      margin-bottom: $space-sm;
+
+      img {
+        display: block;
+
+        width: 38px;
+        height: 38px;
+
+        object-fit: contain;
+      }
+    }
+
+    // --------------------------------
+    // Card title
+    // --------------------------------
+
+    &__title {
+      margin-top: -50px;
+      top: 5px;
+
+      font-family: $font-primary;
+      font-size: 30px;
+      font-weight: $font-regular;
+      line-height: 1.5;
+      color: $color-dark;
+      text-align: center;
+      white-space: nowrap;
+    }
+    h3 {
+      font-size: 20px;
+      letter-spacing: 0.02em;
+    }
+  }
+
+  // 4 cards
+
+  @media (max-width: $breakpoint-xl - 1) {
+    &-card {
+      flex-basis: calc((100vw - (3 * 32px)) / 4);
+      width: calc((100vw - (3 * 32px)) / 4);
+    }
+  }
+
+  // 3 cards
+
+  @media (max-width: $breakpoint-lg - 1) {
+    &-card {
+      flex-basis: calc((100vw - (2 * 32px)) / 3);
+      width: calc((100vw - (2 * 32px)) / 3);
+    }
+  }
+
+  // 2 cards
+
+  @media (max-width: $breakpoint-md - 1) {
+    &__track {
+      gap: $space-md;
+    }
+
+    &-card {
+      flex-basis: calc((100vw - 32px) / 2);
+      width: calc((100vw - 32px) / 2);
+
+      height: 240px;
+
+      padding: $space-md;
+
+      &__title {
+        font-size: $font-size-base;
+      }
+    }
+  }
+
+  // Small mobile
+
+  @media (max-width: $breakpoint-sm - 1) {
+    &-card {
+      flex-basis: calc(100vw - 48px);
+    }
+  }
+}

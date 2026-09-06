@@ -1,0 +1,156 @@
+@use "./variables" as *;
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  margin-bottom: $space-xl;
+  padding: 0 12px;
+
+  // --------------------------------
+  // Section title
+  // --------------------------------
+
+  &__title {
+    margin: 0;
+
+    font-family: $font-heading;
+    font-size: 32px;
+    font-weight: $font-bold;
+    line-height: 1.2;
+
+    color: $color-dark;
+  }
+
+  // --------------------------------
+  // Header actions
+  // --------------------------------
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: $space-sm;
+  }
+
+  // --------------------------------
+  // View all
+  // --------------------------------
+
+  &__view-all {
+    display: inline-flex;
+    align-items: center;
+
+    margin-right: $space-md;
+
+    font-family: $font-primary;
+    font-size: $font-size-base;
+    font-weight: $font-bold;
+    line-height: 1.5;
+
+    color: $color-muted;
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $color-dark;
+    }
+  }
+
+  // --------------------------------
+  // Previous / Next buttons
+  // --------------------------------
+
+  &__arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    padding-bottom: 8px;
+
+    font-family: $font-primary;
+    font-size: 28px;
+    font-weight: $font-regular;
+    line-height: 1;
+
+    color: $color-dark;
+
+    background-color: #f1f1f1;
+    border: 0;
+    border-radius: $radius-md;
+
+    cursor: pointer;
+
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease,
+      transform 0.15s ease;
+
+    &:hover:not(:disabled) {
+      background-color: $color-primary;
+      color: $color-dark;
+    }
+
+    &:active:not(:disabled) {
+      background-color: #e5a900;
+      transform: scale(0.96);
+    }
+
+    &:disabled {
+      color: #d8d8d8;
+      background-color: #f1f1f1;
+      cursor: not-allowed;
+      opacity: 0.7;
+    }
+  }
+
+  // --------------------------------
+  // Mobile
+  // --------------------------------
+
+  @media (max-width: $breakpoint-md - 1) {
+    align-items: flex-start;
+    gap: $space-md;
+
+    &__title {
+      font-size: 28px;
+    }
+
+    &__actions {
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    &__view-all {
+      width: 100%;
+      justify-content: flex-end;
+      margin-right: 0;
+    }
+
+    &__arrow {
+      width: 44px;
+      height: 44px;
+    }
+  }
+
+  // --------------------------------
+  // Small mobile
+  // --------------------------------
+
+  @media (max-width: $breakpoint-sm - 1) {
+    flex-direction: column;
+
+    &__actions {
+      width: 100%;
+    }
+
+    &__view-all {
+      justify-content: flex-start;
+    }
+  }
+}

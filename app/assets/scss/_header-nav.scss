@@ -1,0 +1,365 @@
+@use "./variables" as *;
+
+.header {
+  &__nav-container {
+    width: 100%;
+    max-width: $container-max-width;
+    margin: 0 auto;
+  }
+
+  &__nav-row {
+    // display: flex;
+    // flex-wrap: wrap;
+
+    // margin-right: -24px;
+    // margin-left: -24px;
+
+    padding: $space-md 24px;
+    // padding-bottom: $space-md;
+  }
+
+  &__nav-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+
+    @media (max-width: $breakpoint-lg - 1px) {
+      justify-content: flex-start;
+    }
+
+    // Mobile ONLY (< 576px): Center hamburger button under stacked icons
+    @media (max-width: $breakpoint-sm - 1px) {
+      justify-content: center;
+    }
+  }
+
+  // Hamburger toggle — hidden on desktop, shown on tablet/mobile
+  &__nav-toggle {
+    display: none;
+
+    @media (max-width: $breakpoint-lg) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 55px;
+      height: 39px;
+      padding: 4px 12px;
+
+      background-color: transparent;
+      border: 1px solid rgb(214, 212, 212);
+      border-radius: $radius-md;
+
+      color: $color-dark;
+
+      cursor: pointer;
+
+      svg {
+        width: 26px;
+        height: 26px;
+        display: block;
+      }
+    }
+  }
+
+  // Backdrop behind the offcanvas — only ever rendered on tablet/mobile
+  &__nav-backdrop {
+    position: fixed;
+    inset: 0;
+
+    z-index: 1040;
+
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  // Close (X) button inside the offcanvas — hidden on desktop
+  &__nav-close {
+    display: none;
+
+    @media (max-width: $breakpoint-lg) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      position: absolute;
+      top: 2px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      width: 32px;
+      height: 32px;
+      padding: 0;
+
+      background-color: transparent;
+      border: 0;
+
+      color: $color-muted;
+
+      cursor: pointer;
+
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: $color-dark;
+      }
+
+      svg {
+        width: 26px;
+        height: 26px;
+        display: block;
+        margin-bottom: -12px;
+      }
+    }
+  }
+
+  &__main-menu {
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    // Tablet & mobile: becomes a fixed-width offcanvas panel sliding in from the right
+    @media (max-width: $breakpoint-lg) {
+      display: block;
+
+      position: fixed;
+      top: 0;
+      right: 0;
+
+      z-index: 1050;
+
+      width: 400px;
+      max-width: 100%;
+      height: 100vh;
+
+      padding: $space-xl $space-lg $space-md;
+
+      background-color: $color-white;
+      box-shadow: -4px 0 16px rgba(0, 0, 0, 0.15);
+
+      overflow-y: auto;
+
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+
+      &.header__main-menu--open {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  &__departments {
+    width: auto;
+    min-width: 189px;
+    height: 48px;
+
+    margin: 0 $space-xl 0 0;
+    padding: 1px 4px;
+
+    font-family: $font-primary;
+    font-size: $font-size-base;
+    font-weight: $font-regular;
+    line-height: 2;
+
+    color: $color-dark;
+
+    background-color: #f1f1f1;
+
+    border: 0;
+    border-radius: 0;
+
+    outline: none;
+
+    // cursor: pointer;
+
+    // Tablet & mobile: full width inside the offcanvas, darker fill,
+    // rounded corners, modest gap before the first nav item
+    @media (max-width: $breakpoint-lg) {
+      width: 100%;
+      min-width: 0;
+      margin: 15px 0 $space-lg 0;
+      background-color: #ececec;
+      border-radius: $radius-md;
+      padding: 15px;
+    }
+  }
+
+  // Navigation list
+  &__menu-list {
+    display: flex;
+    align-items: center;
+
+    gap: $space-md;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    // Tablet & mobile: stacked, full width, inside the offcanvas
+    @media (max-width: $breakpoint-lg) {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &__nav-item {
+    // margin: 0;
+    // padding: 0;
+
+    // Tablet & mobile: each item is its own full-width row
+    @media (max-width: $breakpoint-lg) {
+      width: 100%;
+      border-bottom: 1px solid $color-border;
+      position: relative;
+    }
+  }
+
+  // Navigation links
+  &__nav-link {
+    display: flex;
+    align-items: center;
+
+    padding: 5px;
+
+    font-family: $font-primary;
+    font-size: $font-size-base;
+    font-weight: $font-regular;
+    line-height: 2;
+
+    color: $color-body-text;
+
+    background: transparent;
+    border: 0;
+
+    text-decoration: none;
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    &:focus {
+      color: $color-dark;
+    }
+    &:hover {
+      color: $color-dark;
+    }
+
+    // Tablet & mobile: full-width row, larger text, tighter padding
+    @media (max-width: $breakpoint-lg) {
+      width: 100%;
+      margin: 3px -11px;
+      padding: 14px -10px 8px;
+      // padding: 8px 0px;
+
+      font-size: 16px;
+      font-weight: 650;
+
+      white-space: normal;
+    }
+  }
+
+  // Pages dropdown button
+  &__pages-toggle {
+    gap: 2px;
+
+    svg {
+      width: 12px;
+      height: 12px;
+
+      flex-shrink: 0;
+    }
+
+    // Tablet & mobile: arrow pushed to the far right, like other rows
+    @media (max-width: $breakpoint-lg) {
+      justify-content: space-between;
+      // justify-content: flex-end;
+      width: 100%;
+    }
+    svg {
+      text-align: end;
+      // margin: 50px;
+    }
+  }
+
+  // Pages dropdown
+  &__dropdown-menu {
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+
+    z-index: 1000;
+
+    width: 160px;
+    min-width: 160px;
+
+    margin: 0;
+    padding: 8px 0;
+
+    font-family: $font-primary;
+    font-size: $font-size-base;
+    font-weight: $font-regular;
+    line-height: 2;
+
+    color: $color-dark;
+
+    text-align: left;
+    list-style: none;
+
+    background-color: $color-white;
+
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+
+    // Tablet & mobile: becomes an inline accordion instead of a floating menu
+    @media (max-width: $breakpoint-lg) {
+      position: static;
+
+      width: 100%;
+      min-width: 0;
+
+      padding: 0 0 $space-sm;
+
+      background-color: transparent;
+      border: 0;
+      box-shadow: none;
+    }
+  }
+
+  &__dropdown-item {
+    display: block;
+
+    width: 100%;
+
+    padding: 4px 16px;
+
+    font-family: $font-primary;
+    font-size: $font-size-base;
+    font-weight: $font-regular;
+    line-height: 2;
+
+    color: $color-body-text;
+
+    text-decoration: none;
+    white-space: nowrap;
+
+    background-color: transparent;
+
+    &:hover {
+      color: $color-dark;
+      background-color: #f8f9fa;
+    }
+
+    // Tablet & mobile: align with the accordion's indented padding
+    @media (max-width: $breakpoint-lg) {
+      margin: -10px -6px;
+      padding: 5px 0;
+      font-size: 15px;
+      white-space: normal;
+    }
+  }
+}

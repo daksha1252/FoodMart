@@ -1,0 +1,380 @@
+@use "./variables" as *;
+
+.product {
+  width: 100%;
+  margin-top: 48px;
+  padding: $space-xl 30px;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    margin-bottom: $space-xl;
+    padding-bottom: 11px;
+    border-bottom: 1px solid $color-border;
+  }
+
+  &__heading {
+    margin: 0;
+
+    font-family: $font-heading;
+    font-size: 28px;
+    font-weight: $font-bold;
+    line-height: 1.2;
+
+    color: $color-dark;
+  }
+
+  &__tabs {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  &__tab {
+    position: relative;
+
+    padding: 8px 2px;
+
+    font-family: $font-primary;
+    font-size: $font-size-base;
+    font-weight: $font-regular;
+
+    padding-bottom: 3px;
+    color: $color-muted;
+    letter-spacing: 0.5px;
+
+    background: none;
+    border: 0;
+
+    cursor: pointer;
+
+    &--active {
+      color: $color-dark;
+
+      &::after {
+        content: "";
+
+        position: absolute;
+        bottom: -13px;
+        right: -14px;
+        left: -14px;
+
+        height: 2px;
+
+        background-color: $color-primary;
+      }
+    }
+  }
+
+  &__grid {
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 28px;
+  }
+
+  &-card {
+    min-width: 0;
+
+    padding: 16px;
+
+    background-color: $color-white;
+    border-radius: $radius-lg;
+
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.04);
+
+    &:hover {
+      transition: 0.03s ease;
+      box-shadow: 6px 10px 30px rgb(222, 221, 221);
+    }
+
+    &__image {
+      position: relative;
+
+      width: 100%;
+      height: 210px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background-color: $color-light;
+      border-radius: $radius-md;
+
+      overflow: hidden;
+      cursor: pointer;
+
+      img {
+        display: block;
+
+        width: 100%;
+        height: 100%;
+
+        object-fit: contain;
+      }
+    }
+
+    &__discount {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      z-index: 1;
+      width: 45px;
+      //   height: 20px;
+      padding: -2px 0;
+      text-align: center;
+
+      font-family: $font-primary;
+      font-size: 12px;
+      font-weight: $font-bold;
+
+      color: $color-white;
+
+      background-color: #a3be4c;
+      border-radius: $radius-sm;
+    }
+
+    &__wishlist {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      z-index: 1;
+
+      width: 48px;
+      height: 48px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 30px;
+      line-height: 1;
+
+      color: $color-dark;
+
+      background-color: $color-white;
+      border: 1px solid #d8d8d8;
+      border-radius: $radius-pill;
+      transition: color 0.4s ease;
+
+      cursor: pointer;
+      &:hover {
+        background-color: red;
+        color: white;
+      }
+    }
+
+    &__content {
+      padding-top: $space-md;
+    }
+
+    &__name {
+      margin: 0 0 6px;
+
+      font-family: $font-heading;
+      font-size: 18px;
+      font-weight: $font-bold;
+      line-height: 1.4;
+      letter-spacing: 0.2px;
+      color: $color-dark;
+    }
+
+    &__rating {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+
+      margin-bottom: 6px;
+
+      font-family: $font-primary;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    &__unit {
+      color: $color-muted;
+    }
+
+    &__star {
+      display: flex;
+      align-items: center;
+
+      color: $color-primary;
+
+      font-size: 18px;
+      line-height: 1;
+
+      margin-left: 2px;
+    }
+
+    &__rating-value {
+      color: $color-dark;
+      font-weight: $font-bold;
+    }
+    &__price {
+      margin: 0 0 6px;
+
+      font-family: $font-primary;
+      font-size: 22px;
+      font-weight: $font-bold;
+      line-height: 1.2;
+
+      color: $color-dark;
+    }
+
+    &__bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &__quantity {
+      display: flex;
+      align-items: center;
+      gap: $space-sm;
+
+      button {
+        width: 26px;
+        height: 26px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        color: $color-dark;
+
+        background-color: $color-white;
+        border: 1px solid rgb(215, 215, 215);
+        border-radius: $radius-sm;
+
+        cursor: pointer;
+        transition: 0.3s ease;
+      }
+      &-minus {
+        color: #e85d3f;
+        background-color: #fff1ed;
+        border: 1px solid #e85d3f;
+
+        &:active {
+          color: $color-dark;
+          background-color: #e85d3f;
+        }
+      }
+
+      &-plus {
+        color: #6fae2d;
+        background-color: #eef8df;
+        border: 1px solid #6fae2d;
+
+        &:active {
+          color: $color-dark;
+          background-color: #6fae2d;
+        }
+      }
+
+      span {
+        font-size: 16;
+        color: $color-muted;
+      }
+    }
+
+    &__cart {
+      padding: 0;
+
+      font-family: $font-primary;
+      font-size: $font-size-base;
+      font-weight: $font-regular;
+
+      color: $color-muted;
+
+      background: none;
+      border: 0;
+
+      cursor: pointer;
+    }
+  }
+  @media (max-width: $breakpoint-lg - 1) {
+    &__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: $breakpoint-md - 1) {
+    &__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: $breakpoint-sm - 1) {
+    &__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    &__grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
+
+.product-carousel {
+  width: 100%;
+  padding: 70px 15px;
+
+  &__viewport {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  &__track {
+    display: flex;
+    align-items: stretch;
+    gap: 28px;
+    // width: max-content;
+    transition: transform 0.4s ease;
+  }
+
+  // ProductCard inside Best Selling
+  .product-card {
+    flex: 0 0 225px;
+    width: 225px;
+
+    box-shadow:
+      0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+    transition:
+      box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover {
+      box-shadow:
+        0 20px 25px -5px rgba(0, 0, 0, 0.1),
+        0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+  }
+
+  @media (max-width: $breakpoint-lg - 1) {
+    .product-card {
+      flex-basis: calc((100vw - 30px - 64px) / 3);
+      width: calc((100vw - 30px - 64px) / 3);
+    }
+  }
+
+  // Mobile
+  @media (max-width: $breakpoint-md - 1) {
+    &__track {
+      gap: $space-md;
+    }
+
+    .product-card {
+      flex-basis: calc((100vw - 30px - 16px) / 2);
+      width: calc((100vw - 30px - 16px) / 2);
+    }
+  }
+}
