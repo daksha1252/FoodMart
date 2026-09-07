@@ -14,8 +14,8 @@ const props = defineProps({
 });
 
 const currentIndex = ref(0);
-
-const visibleCards = 6;
+const carouselViewPort = ref(null);
+const visibleCards = 4;
 
 const maxIndex = computed(() => {
   return Math.max(0, props.products.length - visibleCards);
@@ -24,12 +24,20 @@ const maxIndex = computed(() => {
 const next = () => {
   if (currentIndex.value < maxIndex.value) {
     currentIndex.value++;
+    carouselViewPort.value.scrollBy({
+      left: 372,
+      behavior:"smooth",
+    })
   }
 };
 
 const previous = () => {
   if (currentIndex.value > 0) {
     currentIndex.value--;
+    carouselViewPort.value.scrollBy({
+      left: -372,
+      behavior:"smooth",
+    })
   }
 };
 </script>
@@ -44,13 +52,8 @@ const previous = () => {
       @next="next"
     />
 
-    <div class="product-carousel__viewport">
-      <div
-        class="product-carousel__track"
-        :style="{
-          transform: `translateX(-${currentIndex * 292}px)`,
-        }"
-      >
+    <div class="product-carousel__viewport" ref="carouselViewPort">
+      <div class="product-carousel__track">
         <ProductCard
           v-for="product in products"
           :key="product.id"

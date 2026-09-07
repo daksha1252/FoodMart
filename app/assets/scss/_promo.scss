@@ -59,6 +59,7 @@
     font-weight: $font-regular;
     line-height: 1.5;
     white-space: nowrap;
+    max-width: 100%;
     color: $color-muted;
   }
 
@@ -91,6 +92,18 @@
       width: 100%;
       height: 100%;
       object-fit: contain;
+    }
+  }
+  @media(max-width: $breakpoint-lg - 1) {
+    &__offer {
+      white-space: nowrap;
+    }
+    &__content {
+      top: -25px;
+    }
+    &__description {
+      max-width: 100%;
+      white-space: normal;
     }
   }
 

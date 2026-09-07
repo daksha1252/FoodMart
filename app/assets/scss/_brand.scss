@@ -11,19 +11,14 @@
 
   &__track {
     display: flex;
-    align-items: stretch;
-    gap: 24px;
-
+    gap: 28px;
     width: max-content;
-
-    transition: transform 0.4s ease;
   }
 
   &-card {
-    flex: 0 0 360px;
-
-    width: 360px;
-    height: 140px;
+    flex: 0 0 453px;
+    width: 453px;
+    height: 158px;
 
     display: flex;
     align-items: center;
@@ -34,53 +29,38 @@
     border: 1px solid $color-border;
     border-radius: $radius-lg;
 
-    // box-shadow: 0 10px 50px rgba(0, 0, 0, 0.04);
-    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.06);
 
     overflow: hidden;
 
-    transition:
-      transform 0.3s ease,
-      box-shadow 0.3s ease;
-
-    // &:hover {
-    //   transform: translateX(5px);
-    //   box-shadow: 0 0 20px rgba(0, 0, 0, 0.06);
-    // }
-
     &__image {
-      flex: 0 0 95.76px;
+      flex: 0 0 150px;
 
-      width: 95.76px;
-      height: 86.19px;
+      width: 150px;
+      height: 130px;
 
       overflow: hidden;
-
       border-radius: $radius-sm;
 
       img {
         display: block;
-
         width: 100%;
         height: 100%;
-
         object-fit: cover;
       }
     }
 
     &__content {
       min-width: 0;
-      //   left: 10%;
-      width: 190px;
+      margin-top: -35px;
       margin-left: 18px;
-      //   padding: -4px;
     }
 
     &__name {
       margin: 0 0 $space-xs;
 
       font-family: $font-primary;
-      font-size: $font-size-base;
+      font-size: 16px;
       font-weight: $font-regular;
       line-height: 1.5;
 
@@ -88,15 +68,171 @@
     }
 
     &__title {
-      width: 160px;
+      width: 220px;
       margin: 0;
 
       font-family: $font-heading;
-      font-size: $font-size-lg;
+      font-size: 20px;
       font-weight: $font-bold;
       line-height: 1.25;
 
       color: $color-muted;
+    }
+  }
+
+
+  @media (max-width: 1599px) {
+
+    &__track {
+      gap: 24px;
+    }
+
+    &-card {
+      flex: 0 0 calc((100vw - 30px - 48px) / 3);
+      width: calc((100vw - 30px - 48px) / 3);
+
+      padding: 14px;
+
+      &__image {
+        flex: 0 0 110px;
+        width: 110px;
+        height: 110px;
+      }
+
+      &__content {
+        margin-top: -20px;
+        margin-left: 14px;
+      }
+
+      &__title {
+        width: 280px;
+        max-width: 160px;
+      }
+    }
+  }
+
+
+  @media (max-width: $breakpoint-xl - 1) {
+
+    &__track {
+      gap: 20px;
+    }
+
+    &-card {
+      flex: 0 0 calc((100vw - 26px - 48px) / 3);
+      width: calc((100vw - 26px - 48px) / 3);
+
+      padding: 14px;
+
+      &__image {
+        flex: 0 0 90px;
+        width: 90px;
+        height: 110px;
+      }
+
+      &__content {
+        margin-top: -20px;
+        margin-left: 14px;
+      }
+
+      &__title {
+        width: auto;
+        max-width: 160px;
+      }
+    }
+  }
+
+
+  @media (max-width: $breakpoint-lg - 1) {
+
+    &__track {
+      gap: 24px;
+    }
+
+    &-card {
+      flex: 0 0 calc((100vw - 30px - 48px) / 3);
+      width: calc((100vw - 30px - 48px) / 3);
+
+      height: 150px;
+      padding: 12px;
+
+      &__image {
+        flex: 0 0 90px;
+        width: 90px;
+        height: 100px;
+      }
+
+      &__content {
+        margin-top: -15px;
+        margin-left: 12px;
+      }
+
+      &__title {
+        width: auto;
+        max-width: 200px;
+      }
+    }
+  }
+
+  // ========================================
+  // Below 768px
+  // 2 cards
+  // Image above content
+  // ========================================
+
+  @media (max-width: $breakpoint-md - 1) {
+
+    &__track {
+      gap: 16px;
+    }
+
+    &-card {
+      flex: 0 0 calc((100vw - 30px - 16px) / 2);
+      width: calc((100vw - 30px - 16px) / 2);
+
+      height: 345px;
+      min-height: 250px;
+
+      padding: 12px;
+
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &-card__image {
+      flex: none;
+
+      width: 100%;
+      height: 225px;
+
+      margin-bottom: 12px;
+    }
+
+    &-card__content {
+      width: 100%;
+      margin: 0;
+    }
+
+    &-card__title {
+      width: 100%;
+      max-width: 220px;
+    }
+  }
+
+  // ========================================
+  // Small mobile
+  // ========================================
+
+  @media (max-width: $breakpoint-sm - 1) {
+
+    &-card {
+      min-height: 342px;
+      padding: 10px;
+    }
+
+    &-card__image {
+      height: 223px;
+      margin-bottom: 10px;
     }
   }
 }

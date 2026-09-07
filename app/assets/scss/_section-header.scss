@@ -74,8 +74,8 @@
     padding-bottom: 8px;
 
     font-family: $font-primary;
-    font-size: 28px;
-    font-weight: $font-regular;
+    font-size: 40px;
+    font-weight: 680px;
     line-height: 1;
 
     color: $color-dark;
@@ -94,6 +94,7 @@
     &:hover:not(:disabled) {
       background-color: $color-primary;
       color: $color-dark;
+      color: white;
     }
 
     &:active:not(:disabled) {
@@ -114,6 +115,7 @@
   // --------------------------------
 
   @media (max-width: $breakpoint-md - 1) {
+    flex-direction: column;
     align-items: flex-start;
     gap: $space-md;
 
@@ -123,12 +125,12 @@
 
     &__actions {
       flex-wrap: wrap;
-      justify-content: flex-end;
+      justify-content: flex-start;
     }
 
     &__view-all {
       width: 100%;
-      justify-content: flex-end;
+      justify-content: flex-start;
       margin-right: 0;
     }
 
