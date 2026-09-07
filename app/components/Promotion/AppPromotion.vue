@@ -10,12 +10,10 @@
 
         <p class="app-promotion__description">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis sed
-          ptibus liberolectus nonet psryroin.<br />
-          Amet sed lorem posuere sit iaculis amet, ac urna. Adipiscing fames
-          semper erat ac in suspendisse iaculis.<br />
+          ptibus liberolectus nonet psryroin. Amet sed lorem posuere sit iaculis
+          amet, ac urna. Adipiscing fames semper erat ac in suspendisse iaculis.
           Amet blandit tortor praesent ante vitae. A, enim pretium senectus
-          magna. Sagittis sed ptibus<br />
-          liberolectus non et psryroin.
+          magna. Sagittis sed ptibus liberolectus non et psryroin.
         </p>
 
         <div class="app-promotion__stores">

@@ -1,0 +1,641 @@
+@use "./variables" as *;
+
+.footer {
+  width: 100%;
+  background-color: $color-white;
+  margin: 30px -12px;
+
+  // =========================================================
+  // SEARCH
+  // =========================================================
+
+  &__search {
+    width: 100%;
+    padding: 42px 40px 68px;
+  }
+
+  &__search-title {
+    margin: 0 0 42px;
+
+    font-family: $font-heading;
+    font-size: 30px;
+    font-weight: $font-bold;
+    line-height: 1.2;
+    letter-spacing: 0.1px;
+    color: $color-dark;
+  }
+
+  &__search-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+  }
+
+  &__search-item {
+    padding: 8px 13px;
+
+    font-family: $font-primary;
+    font-size: $font-size-base;
+    font-weight: $font-regular;
+    line-height: 1.3;
+    color: $color-muted;
+
+    background-color: #fdf8ed;
+    border-radius: $radius-sm;
+  }
+
+  // =========================================================
+  // FEATURES
+  // =========================================================
+
+  &__features {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 40px;
+
+    width: 100%;
+    padding: 0 40px 100px;
+  }
+
+  &__feature {
+    display: flex;
+    align-items: flex-start;
+    min-width: 0;
+  }
+
+  &__feature-icon {
+    flex: 0 0 32px;
+    width: 32px;
+    height: 32px;
+
+    margin-right: 18px;
+
+    img {
+      display: block;
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  &__feature-content {
+    min-width: 0;
+  }
+
+  &__feature-content h3 {
+    margin: 0 0 10px;
+
+    font-family: $font-heading;
+    font-size: 20px;
+    font-weight: $font-bold;
+    line-height: 1.25;
+    color: $color-dark;
+  }
+
+  &__feature-content p {
+    margin: 0;
+
+    font-family: $font-primary;
+    font-size: $font-size-base;
+    font-weight: $font-regular;
+    line-height: 2;
+    color: $color-muted;
+  }
+
+  // =========================================================
+  // MAIN FOOTER
+  // =========================================================
+
+  &__main {
+    display: grid;
+    grid-template-columns:
+      minmax(230px, 1.35fr)
+      minmax(130px, 0.8fr)
+      minmax(150px, 0.9fr)
+      minmax(150px, 0.9fr)
+      minmax(230px, 1.35fr);
+
+    column-gap: 45px;
+
+    width: 100%;
+    padding: 0 40px 70px;
+  }
+
+  // =========================================================
+  // BRAND
+  // =========================================================
+
+  &__brand {
+    min-width: 0;
+  }
+
+  &__logo {
+    display: inline-block;
+    margin-bottom: 42px;
+
+    img {
+      display: block;
+      width: 235px;
+      height: auto;
+    }
+  }
+
+  &__description {
+    max-width: 300px;
+    margin: 0 0 24px;
+
+    font-family: $font-primary;
+    font-size: $font-size-base;
+    font-weight: $font-regular;
+    line-height: 1.8;
+    color: $color-muted;
+  }
+
+  // =========================================================
+  // SOCIALS
+  // =========================================================
+
+  &__socials {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__socials a {
+    width: 42px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: $color-muted;
+
+    border: 1px solid #eeeeee;
+    border-radius: $radius-sm;
+
+    transition:
+      color 0.3s ease,
+      border-color 0.3s ease;
+
+    &:hover {
+      color: $color-dark;
+      border-color: #dddddd;
+    }
+
+    svg {
+      display: block;
+    }
+  }
+
+  // =========================================================
+  // LINKS
+  // =========================================================
+
+  &__links {
+    min-width: 0;
+  }
+
+  &__heading {
+    margin: 0 0 14px;
+
+    font-family: $font-heading;
+    font-size: 20px;
+    font-weight: $font-bold;
+    line-height: 1.3;
+    color: $color-dark;
+  }
+
+  &__links ul {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+  }
+
+  &__links li {
+    margin-bottom: 7px;
+  }
+
+  &__links a {
+    font-family: $font-primary;
+    font-size: $font-size-base;
+    font-weight: $font-regular;
+    line-height: 1.6;
+    color: $color-muted;
+  }
+
+  // =========================================================
+  // SUBSCRIBE
+  // =========================================================
+
+  &__subscribe {
+    min-width: 0;
+  }
+
+  &__subscribe p {
+    max-width: 320px;
+    margin: 0 0 20px;
+
+    font-family: $font-primary;
+    font-size: $font-size-base;
+    font-weight: $font-regular;
+    line-height: 2;
+    color: $color-muted;
+  }
+
+  &__form {
+    display: flex;
+    width: 100%;
+    max-width: 390px;
+  }
+
+  &__form input {
+    min-width: 0;
+    width: 100%;
+    height: 42px;
+
+    padding: 8px 14px;
+
+    font-family: $font-primary;
+    font-size: $font-size-sm;
+    color: $color-muted;
+
+    background-color: #f8f8f8;
+    border: 0;
+    outline: none;
+  }
+
+  &__form button {
+    flex: 0 0 auto;
+
+    height: 42px;
+    padding: 0 18px;
+
+    font-family: $font-primary;
+    font-size: $font-size-sm;
+    font-weight: $font-regular;
+    color: $color-white;
+
+    background-color: $color-dark;
+    border: 0;
+    border-radius: 0 $radius-sm $radius-sm 0;
+
+    cursor: pointer;
+  }
+
+  // =========================================================
+  // BOTTOM
+  // =========================================================
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    padding: 0 40px 40px;
+  }
+
+  &__copyright {
+    margin: 0;
+
+    font-family: $font-primary;
+    font-size: $font-size-base;
+    font-weight: $font-regular;
+    line-height: 1.5;
+    color: $color-muted;
+  }
+
+  // =========================================================
+  // 992px - 1199px
+  //
+  // Keep the complete desktop arrangement.
+  // Only shrink spacing and sizes.
+  // =========================================================
+
+  @media (max-width: $breakpoint-xl - 1) {
+    &__search {
+      padding: 38px 30px 62px;
+    }
+
+    &__search-title {
+      margin-bottom: 36px;
+      font-size: 28px;
+    }
+
+    &__search-item {
+      padding: 7px 12px;
+      font-size: $font-size-sm;
+    }
+
+    &__features {
+      gap: 24px;
+      padding: 0 30px 82px;
+    }
+
+    &__feature-icon {
+      flex-basis: 30px;
+      width: 30px;
+      height: 30px;
+      margin-right: 12px;
+
+      img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    &__feature-content h3 {
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+
+    &__feature-content p {
+      font-size: $font-size-sm;
+    }
+
+    &__main {
+      grid-template-columns:
+        minmax(200px, 1.35fr)
+        minmax(115px, 0.8fr)
+        minmax(130px, 0.9fr)
+        minmax(130px, 0.9fr)
+        minmax(200px, 1.35fr);
+
+      column-gap: 25px;
+      padding: 0 30px 62px;
+    }
+
+    &__logo {
+      margin-bottom: 35px;
+
+      img {
+        width: 210px;
+      }
+    }
+
+    &__description {
+      font-size: $font-size-sm;
+    }
+
+    &__socials {
+      gap: 6px;
+    }
+
+    &__socials a {
+      width: 36px;
+      height: 34px;
+    }
+
+    &__heading {
+      font-size: 18px;
+    }
+
+    &__links a,
+    &__subscribe p {
+      font-size: $font-size-sm;
+    }
+
+    &__form {
+      max-width: 100%;
+    }
+
+    &__form input {
+      height: 38px;
+    }
+
+    &__form button {
+      height: 38px;
+      padding: 0 12px;
+    }
+
+    &__bottom {
+      padding: 0 30px 35px;
+    }
+
+    &__copyright {
+      font-size: $font-size-sm;
+    }
+  }
+
+  // =========================================================
+  // BELOW 992px
+  //
+  // Features move into 3 + 2.
+  // Main footer moves into rows.
+  // =========================================================
+
+  @media (max-width: $breakpoint-lg - 1) {
+    &__search {
+      padding: 30px 22px 60px;
+    }
+
+    &__search-title {
+      margin-bottom: 32px;
+      font-size: 26px;
+    }
+
+    &__search-list {
+      gap: 8px;
+    }
+
+    // -------------------------
+    // FEATURES
+    // -------------------------
+
+    &__features {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      column-gap: 30px;
+      row-gap: 42px;
+
+      padding: 0 22px 80px;
+    }
+
+    &__feature {
+      display: block;
+    }
+
+    &__feature-icon {
+      margin: 0 0 10px;
+    }
+
+    &__feature-content h3 {
+      font-size: 20px;
+    }
+
+    &__feature-content p {
+      font-size: $font-size-base;
+    }
+
+    // -------------------------
+    // MAIN FOOTER
+    // -------------------------
+
+    &__main {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 48px 55px;
+
+      padding: 0 24px 60px;
+    }
+
+    // Brand gets first row
+    &__brand {
+      grid-column: 1 / -1;
+    }
+
+    &__logo {
+      margin-bottom: 35px;
+
+      img {
+        width: 235px;
+      }
+    }
+
+    // Ultras + Customer Service
+    &__links {
+      width: 100%;
+    }
+
+    // Subscribe gets complete row
+    &__subscribe {
+      grid-column: 1 / -1;
+    }
+
+    &__subscribe p {
+      max-width: 400px;
+    }
+
+    &__form {
+      max-width: 390px;
+    }
+
+    // -------------------------
+    // BOTTOM
+    // -------------------------
+
+    &__bottom {
+      padding: 0 24px 30px;
+    }
+  }
+
+  // =========================================================
+  // BELOW 576px
+  // =========================================================
+
+  @media (max-width: $breakpoint-sm - 1) {
+    &__search {
+      padding: 28px 15px 52px;
+    }
+
+    &__search-title {
+      margin-bottom: 28px;
+      font-size: 24px;
+    }
+
+    &__search-item {
+      padding: 7px 10px;
+      font-size: $font-size-sm;
+    }
+
+    // -------------------------
+    // FEATURES = 2 + 2 + 1
+    // -------------------------
+
+    &__features {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 24px;
+      row-gap: 38px;
+
+      padding: 0 24px 68px;
+    }
+
+    &__feature {
+      display: block;
+    }
+
+    &__feature-icon {
+      margin-bottom: 8px;
+    }
+
+    &__feature-content h3 {
+      font-size: 18px;
+    }
+
+    &__feature-content p {
+      font-size: $font-size-sm;
+      line-height: 2;
+    }
+
+    // -------------------------
+    // MAIN FOOTER
+    // -------------------------
+
+    &__main {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 35px;
+      row-gap: 40px;
+
+      padding: 0 24px 52px;
+    }
+
+    // Logo = full row
+    &__brand {
+      grid-column: 1 / -1;
+    }
+
+    &__logo {
+      margin-bottom: 35px;
+
+      img {
+        width: 220px;
+      }
+    }
+
+    &__description {
+      max-width: 290px;
+    }
+
+    // Ultras + Customer Service = two columns
+    &__links {
+      width: 100%;
+    }
+
+    &__heading {
+      font-size: 20px;
+    }
+
+    &__links a {
+      font-size: $font-size-base;
+    }
+
+    // Subscribe = full row
+    &__subscribe {
+      grid-column: 1 / -1;
+    }
+
+    &__subscribe p {
+      max-width: 330px;
+      font-size: $font-size-sm;
+    }
+
+    &__form {
+      max-width: 100%;
+    }
+
+    // -------------------------
+    // BOTTOM
+    // -------------------------
+
+    &__bottom {
+      padding: 0 24px 24px;
+    }
+
+    &__copyright {
+      font-size: $font-size-sm;
+    }
+  }
+}

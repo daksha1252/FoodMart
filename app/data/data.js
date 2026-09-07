@@ -372,3 +372,100 @@ export const blogs = [
       "Lorem ipsum dolor sit amet, consectetur adipi elit. Aliquet eleifend viverra enim tincidunt donec quam. A in arcu, hendrerit neque dolor morbi...",
   },
 ];
+
+//footer
+export const footerSearchItems = [
+  "Blue diamon almonds",
+  "Angie’s Boomchickapop Corn",
+  "Salty kettle Corn",
+  "Chobani Greek Yogurt",
+  "Sweet Vanilla Yogurt",
+  "Foster Farms Takeout Crispy wings",
+  "Warrior Blend Organic",
+  "Chao Cheese Creamy",
+  "Chicken meatballs",
+  "Blue diamon almonds",
+  "Angie’s Boomchickapop Corn",
+  "Salty kettle Corn",
+  "Chobani Greek Yogurt",
+  "Sweet Vanilla Yogurt",
+  "Foster Farms Takeout Crispy wings",
+  "Warrior Blend Organic",
+  "Chao Cheese Creamy",
+  "Chicken meatballs",
+];
+
+export const footerFeatures = [
+  {
+    title: "Free delivery",
+    description: "Lorem ipsum dolor sit amet, consectetur adipi elit.",
+    icon: "/icons/cart.svg",
+  },
+  {
+    title: "100% secure payment",
+    description: "Lorem ipsum dolor sit amet, consectetur adipi elit.",
+    icon: "/icons/shield.svg",
+  },
+  {
+    title: "Quality guarantee",
+    description: "Lorem ipsum dolor sit amet, consectetur adipi elit.",
+    icon: "/icons/store.svg",
+  },
+  {
+    title: "guaranteed savings",
+    description: "Lorem ipsum dolor sit amet, consectetur adipi elit.",
+    icon: "/icons/heart.svg",
+  },
+  {
+    title: "Daily offers",
+    description: "Lorem ipsum dolor sit amet, consectetur adipi elit.",
+    icon: "/icons/gift.svg",
+  },
+];
+
+export const footerLinkGroups = [
+  {
+    title: "Ultras",
+    links: [
+      "About us",
+      "Conditions",
+      "Our Journals",
+      "Careers",
+      "Affiliate Programme",
+      "Ultras Press",
+    ],
+  },
+  {
+    title: "Customer Service",
+    links: [
+      "FAQ",
+      "Contact",
+      "Privacy Policy",
+      "Returns & Refunds",
+      "Cookie Guidelines",
+      "Delivery Information",
+    ],
+  },
+  {
+    title: "Customer Service",
+    links: [
+      "FAQ",
+      "Contact",
+      "Privacy Policy",
+      "Returns & Refunds",
+      "Cookie Guidelines",
+      "Delivery Information",
+    ],
+  },
+  {
+    title: "Customer Service",
+    links: [
+      "FAQ",
+      "Contact",
+      "Privacy Policy",
+      "Returns & Refunds",
+      "Cookie Guidelines",
+      "Delivery Information",
+    ],
+  },
+];

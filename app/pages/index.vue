@@ -1,4 +1,5 @@
 <script setup>
+import Footer from "~/components/Footer/Footer.vue";
 import AppPromotion from "~/components/Promotion/AppPromotion.vue";
 import { bestSellingProducts, mostPopularProducts } from "~/data/data.js";
 </script>
@@ -21,4 +22,5 @@ import { bestSellingProducts, mostPopularProducts } from "~/data/data.js";
   <ProductCarousel title="Just Arrived" :products="mostPopularProducts" />
   <BlogSection />
   <AppPromotion />
+  <Footer />
 </template>
